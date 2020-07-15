@@ -1,0 +1,17 @@
+server:
+    port: 8080
+
+project:
+    netty-head-version: 1
+    netty-head-length: 6
+    netty-length-offset: 2
+    netty-length-count: 4
+    netty-port: 8081
+    netty-read-idle-time: 9
+    netty-write-idle-time: 9
+    netty-all-idle-time: 9
+    netty-idle-time-unit: SECONDS
+    netty-server-boss-thread-count: 1
+    netty-server-work-thread-count: 10
+    netty-server-option:
+        SO_BACKLOG: 1024

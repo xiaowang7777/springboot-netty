@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+option java_package="com.wjf.github.protobuf";
+option java_outer_classname="ProtoMsg";
+
+message MessageInfo{
+    optional HeadType headType=1;
+    optional LoginRequest loginRequest=2;
+    optional LoginResponse loginResponse=3;
+    optional LogoutRequest logoutRequest=4;
+    optional LogoutResponse logoutResponse=5;
+    optional KeepAliveRequest keepAliveRequest=6;
+    optional KeepAliveResponse keepAliveResponse=7;
+    optional MessageRequest messageRequest=8;
+    optional MessageResponse messageResponse=9;
+    optional MessageNotice messageNotice=10;
+}
+
+enum HeadType{
+    Login_Request=0;
+    Login_Response=1;
+    Logout_Request=2;
+    Logout_Response=3;
+    KeepAlive_Request=4;
+    KeepAlive_Response=5;
+    Message_Request=6;
+    Message_Response=7;
+    Message_Notice=8;
+}
+
+message LoginRequest{
+    optional string username=1;
+    optional string password=2;
+    optional uint32 platform=3;
+}
+
+message LoginResponse{
+    optional bool result=1;
+    optional uint32 code=2;
+    optional string msg=3;
+    optional string uid=4;
+    optional string token=5;
+    optional string sessionId=6;
+}
+
+message LogoutRequest{
+    optional string uid=1;
+    optional string token=2;
+    optional string sessionId=3;
+}
+
+message LogoutResponse{
+    optional bool result=1;
+    optional uint32 code=2;
+    optional string msg=3;
+}
+
+message KeepAliveRequest{
+    optional string uid=1;
+    optional string token=2;
+    optional string sessionId=3;
+}
+
+message KeepAliveResponse{
+    optional bool result=1;
+    optional uint32 code=2;
+    optional string msg=3;
+}
+
+message MessageRequest{
+    optional string uid=1;
+    optional string token=2;
+    optional string sessionId=3;
+    optional string toUid=4;
+    optional string toGroup=5;
+    optional string content=6;
+    optional string resourceUrl=7;
+    optional uint64 timestamp=8;
+}
+
+message MessageResponse{
+    optional bool result=1;
+    optional uint32 code=2;
+    optional string msg=3;
+}
+
+message MessageNotice{
+    optional string fromUid=1;
+    optional string fromGroup=2;
+    optional string content=3;
+    optional string resourceUrl=4;
+    optional uint64 timestamp=5;
+}
