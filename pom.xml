@@ -12,7 +12,7 @@
 		<compiler.encoding>UTF-8</compiler.encoding>
 		<compiler.version>3.8.1</compiler.version>
 		<netty.version>4.1.42.Final</netty.version>
-		<protobuf.version>3.11.4</protobuf.version>
+		<protobuf.version>3.16.1</protobuf.version>
 		<source.version>1.8</source.version>
 		<springboot.version>2.2.7.RELEASE</springboot.version>
 		<target.version>1.8</target.version>
